@@ -3,47 +3,35 @@ import {View, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import {createBottomTabNavigator, BottomTabBar} from '@react-navigation/bottom-tabs';
 import {COLORS, icons} from '../constants';
 import {Home} from '../screens';
-import Svg, { Path } from 'react-native-svg';
+import SelectedCustomButton from '../components/Tabs/SelectedCustomButton';
 
 const Tab = createBottomTabNavigator();
+
+const tabBarIcon = (focused, icon) => (
+  <Image
+    source={icon}
+    resizeMode="contain"
+    style={{...styles.icon, ...{tintColor: focused ? COLORS.primary : COLORS.secondary,}}}
+  />
+)
+
+const tabBarButton = props => (
+  <TabBarCustomButton {...props} />
+)
 
 const TabBarCustomButton = ({accessibilityState, children, onPress}) => {
   const isSelected = accessibilityState.selected
 
   if(isSelected) {
     return (
-      <View style={{ flex: 1, alignItems: "center" }}>
-        <View style={{ flexDirection: 'row', position: 'absolute', top: 0 }}>
-          <View style={{ flex: 1, backgroundColor: COLORS.white }}></View>
-          <Svg
-            width={75}
-            height={61}
-            viewBox="0 0 75 61"
-          >
-            <Path
-              d="M75.2 0v61H0V0c4.1 0 7.4 3.1 7.9 7.1C10 21.7 22.5 33 37.7 33c15.2 0 27.7-11.3 29.7-25.9.5-4 3.9-7.1 7.9-7.1h-.1z"
-              fill={COLORS.white}
-            />
-          </Svg>
-          <View style={{ flex: 1, backgroundColor: COLORS.white }}></View>
-        </View>
-
-        <TouchableOpacity
-          style={styles.selectedButton}
-          onPress={onPress}
-        >
-          {children}
-        </TouchableOpacity>
-      </View>
+      <SelectedCustomButton onPress={onPress} >
+        {children}
+      </SelectedCustomButton>
     )
   }
 
   return (
-    <TouchableOpacity
-      style={styles.normalButton}
-      activeOpacity={1}
-      onPress={onPress}
-    >
+    <TouchableOpacity style={styles.normalButton} activeOpacity={1} onPress={onPress}>
       {children}
     </TouchableOpacity>
   )
@@ -70,16 +58,8 @@ const Tabs = () => {
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: ({focused}) => (
-            <Image
-              source={icons.cutlery}
-              resizeMode="contain"
-              style={{...styles.icon, ...{tintColor: focused ? COLORS.primary : COLORS.secondary,}}}
-            />
-          ),
-          tabBarButton: (props) => (
-            <TabBarCustomButton {...props} />
-          )
+          tabBarIcon: ({focused}) => tabBarIcon(focused, icons.cutlery),
+          tabBarButton: tabBarButton
         }}
       />
 
@@ -87,16 +67,8 @@ const Tabs = () => {
         name="Search"
         component={Home}
         options={{
-          tabBarIcon: ({focused}) => (
-            <Image
-              source={icons.search}
-              resizeMode="contain"
-              style={{...styles.icon, ...{tintColor: focused ? COLORS.primary : COLORS.secondary,}}}
-            />
-          ),
-          tabBarButton: (props) => (
-            <TabBarCustomButton {...props} />
-          )
+          tabBarIcon: ({focused}) => tabBarIcon(focused, icons.search),
+          tabBarButton: tabBarButton
         }}
       />
 
@@ -104,16 +76,8 @@ const Tabs = () => {
         name="Like"
         component={Home}
         options={{
-          tabBarIcon: ({focused}) => (
-            <Image
-              source={icons.like}
-              resizeMode="contain"
-              style={{...styles.icon, ...{tintColor: focused ? COLORS.primary : COLORS.secondary,}}}
-            />
-          ),
-          tabBarButton: (props) => (
-            <TabBarCustomButton {...props} />
-          )
+          tabBarIcon: ({focused}) => tabBarIcon(focused, icons.like),
+          tabBarButton: tabBarButton
         }}
       />
 
@@ -121,16 +85,8 @@ const Tabs = () => {
         name="User"
         component={Home}
         options={{
-          tabBarIcon: ({focused}) => (
-            <Image
-              source={icons.user}
-              resizeMode="contain"
-              style={{...styles.icon, ...{tintColor: focused ? COLORS.primary : COLORS.secondary,}}}
-            />
-          ),
-          tabBarButton: (props) => (
-            <TabBarCustomButton {...props} />
-          )
+          tabBarIcon: ({focused}) => tabBarIcon(focused, icons.user),
+          tabBarButton: tabBarButton
         }}
       />
     </Tab.Navigator>
