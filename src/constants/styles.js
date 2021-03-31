@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { COLORS } from './index'
 
 export default StyleSheet.create({
   container: {

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons, images, globalStyles, SIZES, COLORS, FONTS } from '../constants'
 
-const Header = () => (
+const Header = ({currentLocation}) => (
   <View style={styles.header}>
     <TouchableOpacity style={styles.headerButton}>
       <Image 
@@ -16,7 +16,7 @@ const Header = () => (
 
     <View style={globalStyles.center}>
       <View style={styles.headerTitle}>
-        <Text style={{...FONTS.h3 }}>Location</Text>
+        <Text style={{...FONTS.h3 }}>{currentLocation}</Text>
       </View>
     </View>
 
@@ -30,11 +30,38 @@ const Header = () => (
   </View>
 )
 
+const MainCategories = () => {
+  const [categories, setCategories] = useState([])
+
+  return (
+    <View style={styles.mainCategories}>
+      <Text style={{...FONTS.h1}}>Main</Text>
+      <Text style={{...FONTS.h1}}>Categories</Text>
+
+      {/* <FlatList 
+        data={categories}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={item => item.id}
+        renderItem={}
+        contentContainerStyle={styles.categoriesList}
+      /> */}
+    </View>
+  )
+}
+
 const Home = () => {
+
+  
+  const [selectedCategory, setSelectedCategory] = useState(null)
+  const [restaurants, setRestaurants] = useState([])
+  const [currentLocation, setCurrentLocation] = useState({})
+
 
   return (
     <SafeAreaView style={globalStyles.container}>
-      <Header/>
+      <Header currentLocation="Santa tecla" />
+      <MainCategories/>
     </SafeAreaView>
   )
 }
@@ -60,6 +87,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: SIZES.radius
+  },
+  mainCategories: {
+    padding: SIZES.padding * 2
+  },
+  categoriesList: {
+    paddingVertical: SIZES.padding * 2
   }
 })
 
