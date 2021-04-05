@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import MainCategories from '../components/Categories/MainCategories'
 import { icons, images, globalStyles, SIZES, COLORS, FONTS } from '../constants'
 
 const Header = ({currentLocation}) => (
@@ -29,26 +30,6 @@ const Header = ({currentLocation}) => (
     </TouchableOpacity>
   </View>
 )
-
-const MainCategories = () => {
-  const [categories, setCategories] = useState([])
-
-  return (
-    <View style={styles.mainCategories}>
-      <Text style={{...FONTS.h1}}>Main</Text>
-      <Text style={{...FONTS.h1}}>Categories</Text>
-
-      {/* <FlatList 
-        data={categories}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={item => item.id}
-        renderItem={}
-        contentContainerStyle={styles.categoriesList}
-      /> */}
-    </View>
-  )
-}
 
 const Home = () => {
 
@@ -88,12 +69,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: SIZES.radius
   },
-  mainCategories: {
-    padding: SIZES.padding * 2
-  },
-  categoriesList: {
-    paddingVertical: SIZES.padding * 2
-  }
+
+
 })
 
 export default Home

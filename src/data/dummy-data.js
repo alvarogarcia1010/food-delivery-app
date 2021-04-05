@@ -1,3 +1,5 @@
+import { icons, images } from '../constants'
+
 // price rating
 export const AFFORDABLE = 1;
 export const FAIR_PRICE = 2;
@@ -70,7 +72,7 @@ export const RESTAURANTS = [
     name: 'ByProgrammers Burger',
     rating: 4.8,
     categories: [5, 7],
-    priceRating: affordable,
+    priceRating: AFFORDABLE,
     photo: images.burger_restaurant_1,
     duration: '30 - 45 min',
     location: {
@@ -113,7 +115,7 @@ export const RESTAURANTS = [
     name: 'ByProgrammers Pizza',
     rating: 4.8,
     categories: [2, 4, 6],
-    priceRating: expensive,
+    priceRating: EXPENSIVE,
     photo: images.pizza_restaurant,
     duration: '15 - 20 min',
     location: {
@@ -165,7 +167,7 @@ export const RESTAURANTS = [
     name: 'ByProgrammers Hotdogs',
     rating: 4.8,
     categories: [3],
-    priceRating: expensive,
+    priceRating: EXPENSIVE,
     photo: images.hot_dog_restaurant,
     duration: '20 - 25 min',
     location: {
@@ -192,7 +194,7 @@ export const RESTAURANTS = [
     name: 'ByProgrammers Sushi',
     rating: 4.8,
     categories: [8],
-    priceRating: expensive,
+    priceRating: EXPENSIVE,
     photo: images.japanese_restaurant,
     duration: '10 - 15 min',
     location: {
@@ -219,7 +221,7 @@ export const RESTAURANTS = [
     name: 'ByProgrammers Cuisine',
     rating: 4.8,
     categories: [1, 2],
-    priceRating: affordable,
+    priceRating: AFFORDABLE,
     photo: images.noodle_shop,
     duration: '15 - 20 min',
     location: {
@@ -270,7 +272,7 @@ export const RESTAURANTS = [
     name: 'ByProgrammers Dessets',
     rating: 4.9,
     categories: [9, 10],
-    priceRating: affordable,
+    priceRating: AFFORDABLE,
     photo: images.kek_lapis_shop,
     duration: '35 - 40 min',
     location: {
