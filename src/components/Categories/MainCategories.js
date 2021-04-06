@@ -8,7 +8,7 @@ import Category from './Category'
 const MainCategories = () => {
   const categories = useCategories()
 
-  const renderItem = ({item}) => <Category {...item} onSelectCategory={() => {}} />
+  const renderItem = ({item}) => <Category categoryData={item} />
 
   return (
     <View style={styles.mainCategories}>
