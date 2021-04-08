@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
-import { FlatList } from 'react-native-gesture-handler'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import MainCategories from '../components/Categories/MainCategories'
+import RestaurantList from '../components/Restaurants/RestaurantList'
 import { icons, images, globalStyles, SIZES, COLORS, FONTS } from '../constants'
 
 const Header = ({currentLocation}) => (
@@ -33,16 +33,11 @@ const Header = ({currentLocation}) => (
 
 const Home = () => {
 
-  
-  const [selectedCategory, setSelectedCategory] = useState(null)
-  const [restaurants, setRestaurants] = useState([])
-  const [currentLocation, setCurrentLocation] = useState({})
-
-
   return (
     <SafeAreaView style={globalStyles.container}>
       <Header currentLocation="Santa tecla" />
       <MainCategories/>
+      <RestaurantList />
     </SafeAreaView>
   )
 }
