@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
-import { COLORS, FONTS, globalStyles, SIZES } from '../../constants'
+import { COLORS, FONTS, globalStyles, icons, SIZES } from '../../constants'
 
 const Restaurant = ({restaurantData}) => {
   return (
@@ -19,6 +19,23 @@ const Restaurant = ({restaurantData}) => {
         </View>
       </View> 
       <Text style={styles.restaurantName}>{restaurantData.name}</Text>
+      <View style={styles.actionButtons} >
+        {/* Rating */}
+        <Image 
+          source={icons.star}
+          style={styles.favoriteIcon}
+        />
+        <Text style={...FONTS.body3}>{item.rating}</Text>
+        
+        {/* Categories */}
+        <View style={styles.categoryList}>
+          {item.categories.map(categoryId => (
+            <View style={styles.categoryItem} key={categoryId}>
+              <Text>{categoryId}</Text>
+            </View>
+          ))}
+        </View>
+      </View>
     </TouchableOpacity>
   )
 }
@@ -52,6 +69,23 @@ const styles = StyleSheet.create({
   },
   restaurantName: {
     ...FONTS.body2
+  },
+  actionButtons: {
+    marginTop: SIZES.padding,
+    flexDirection: 'row'
+  },
+  favoriteIcon: {
+    height: 20,
+    width: 20,
+    marginRight: 10,
+    tintColor: COLORS.primary,
+  },
+  categoryList: {
+    flexDirection: 'row',
+    marginLeft: 10
+  },
+  categoryItem: {
+    flexDirection: 'row'
   }
 })
 
