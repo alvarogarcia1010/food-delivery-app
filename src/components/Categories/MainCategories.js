@@ -6,7 +6,7 @@ import Category from './Category'
 
 
 const MainCategories = () => {
-  const categories = useCategories()
+  const { categories } = useCategories()
 
   const renderItem = ({item}) => <Category categoryData={item} />
 

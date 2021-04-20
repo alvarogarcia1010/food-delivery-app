@@ -1,12 +1,21 @@
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import { COLORS, FONTS, globalStyles, icons, SIZES } from '../../constants'
+import useCategories from '../../hooks/useCategories'
 
 const Restaurant = ({restaurantData}) => {
+  const navigation = useNavigation();
+  const { getCategoryNameById } = useCategories()
+
+  const onHandleNavigation = () => {
+    navigation.navigate("Restaurant", {restaurantData})
+  }
+
   return (
     <TouchableOpacity 
       style={styles.item}
-      onPress={() => {}}
+      onPress={onHandleNavigation}
     >
       <View style={styles.imageContent}>
         <Image 
@@ -25,16 +34,19 @@ const Restaurant = ({restaurantData}) => {
           source={icons.star}
           style={styles.favoriteIcon}
         />
-        <Text style={...FONTS.body3}>{item.rating}</Text>
+        <Text style={{...FONTS.body3}}>{restaurantData.rating}</Text>
         
         {/* Categories */}
         <View style={styles.categoryList}>
-          {item.categories.map(categoryId => (
+          {restaurantData.categories.map(categoryId => (
             <View style={styles.categoryItem} key={categoryId}>
-              <Text>{categoryId}</Text>
+              <Text style={{...FONTS.body3}}>{getCategoryNameById(categoryId)}</Text>
+              <Text style={styles.separator}> - </Text>
             </View>
           ))}
         </View>
+
+        {/* Price */}
       </View>
     </TouchableOpacity>
   )
@@ -86,6 +98,10 @@ const styles = StyleSheet.create({
   },
   categoryItem: {
     flexDirection: 'row'
+  },
+  separator: {
+    ...FONTS.body3,
+    color: COLORS.darkgray
   }
 })
 

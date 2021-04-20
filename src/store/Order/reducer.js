@@ -1,7 +1,7 @@
 import { SET_CURRENT_LOCATION, SET_SELECTED_CATEGORY } from "./actions"
 
 const INITIAL_STATE = {
-  selectedCategory: null,
+  selectedCategory: {},
   currentLocation: {}
 }
 

@@ -3,6 +3,7 @@ import { COLORS } from './index'
 
 export default StyleSheet.create({
   container: {
+    marginTop: 10,
     flex: 1,
     backgroundColor: COLORS.lightGray4
   },

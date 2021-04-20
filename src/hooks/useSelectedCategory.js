@@ -14,7 +14,7 @@ const useSelectedCategory = () => {
   }
 
   useEffect(() => {
-    let restaurantList = RESTAURANTS.filter(a => a.categories.includes(selectedCategory.id))
+    let restaurantList = RESTAURANTS.filter(a => a.categories.includes(selectedCategory?.id))
     setRestaurants(restaurantList)
   }, [selectedCategory.id])
 
