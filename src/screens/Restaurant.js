@@ -1,11 +1,20 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { SafeAreaView, View, Text, StyleSheet } from 'react-native'
 
-const Restaurant = () => {
+const Restaurant = ({ route }) => {
+  const [restaurant, setRestaurant] = useState(null)
+  const [currentLocation, setCurrentLocation] = useState(null)
+
+  useEffect(() => {
+    const { item, currentLocation } = route.params
+    setRestaurant(item)
+    setCurrentLocation(currentLocation)
+  }, [])
+
   return (
-    <View>
+    <SafeAreaView>
       <Text>Restaurant</Text>
-    </View>
+    </SafeAreaView>
   )
 }
 
