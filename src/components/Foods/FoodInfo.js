@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import Animated from 'react-native-reanimated'
-import { COLORS, FONTS, SIZES } from '../../constants'
+import { COLORS, FONTS, icons, SIZES } from '../../constants'
 
 const FoodInfo = ({menu}) => {
   return (
@@ -49,6 +49,19 @@ const FoodInfo = ({menu}) => {
           </View>
 
           {/* Name And Description */}
+          <View style={styles.nameAndDescription}>
+            <Text style={styles.name}>{item.name} - {item.price}</Text>
+            <Text style={{...FONTS.body3}}>{item.description}</Text>
+          </View>
+
+          {/* Calories */}
+          <View style={styles.caloriesContainer}>
+            <Image 
+              source={icons.fire}
+              style={styles.caloriesIcon} 
+            />
+            <Text style={{...FONTS.body3, color: COLORS.darkgray}}>{item.calories.toFixed(2)} cal</Text>
+          </View>
         </View>
       ))}
     </Animated.ScrollView>
@@ -96,6 +109,26 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 25,
     borderBottomRightRadius: 25
   },
+  nameAndDescription: {
+    width: SIZES.width,
+    alignItems: 'center',
+    marginTop: 15,
+    paddingHorizontal: SIZES.padding * 2
+  },
+  name: {
+    marginVertical: 10,
+    textAlign: 'center',
+    ...FONTS.h2
+  },
+  caloriesContainer: {
+    flexDirection: 'row',
+    marginTop: 10
+  },
+  caloriesIcon: {
+    width: 20,
+    height: 20,
+    marginRight: 10
+  }
 })
 
 

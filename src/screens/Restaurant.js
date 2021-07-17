@@ -1,5 +1,7 @@
 import React from 'react'
 import { View, SafeAreaView, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
+import FoodInfo from '../components/Foods/FoodInfo'
+import OrderDetail from '../components/Foods/OrderDetail'
 import { icons, images, globalStyles, SIZES, COLORS, FONTS } from '../constants'
 import useRestaurant from '../hooks/useRestaurant'
 
@@ -44,6 +46,8 @@ const Restaurant = ({route, navigation}) => {
         restaurantName={restaurant?.name || 'AlvaroRestaurant'}
         onBackButton={() => navigation.goBack()}
       />
+      <FoodInfo menu={restaurant?.menu} />
+      <OrderDetail />
       <Text>Restaurant</Text>
     </SafeAreaView>
   )
