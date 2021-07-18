@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, SafeAreaView, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import FoodInfo from '../components/Foods/FoodInfo'
-import OrderDetail from '../components/Foods/OrderDetail'
+import OrderDetail from '../components/OrderDetail/OrderDetail'
 import { icons, images, globalStyles, SIZES, COLORS, FONTS } from '../constants'
 import useRestaurant from '../hooks/useRestaurant'
 
@@ -48,7 +48,7 @@ const Restaurant = ({route, navigation}) => {
       />
       <FoodInfo menu={restaurant?.menu} />
       <OrderDetail />
-      <Text>Restaurant</Text>
+     
     </SafeAreaView>
   )
 }

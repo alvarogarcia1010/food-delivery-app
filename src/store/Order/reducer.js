@@ -2,7 +2,8 @@ import { SET_CURRENT_LOCATION, SET_SELECTED_CATEGORY } from "./actions"
 
 const INITIAL_STATE = {
   selectedCategory: {},
-  currentLocation: {}
+  currentLocation: {},
+  orderItems: []
 }
 
 const orderReducer = (state = INITIAL_STATE, action) => {
