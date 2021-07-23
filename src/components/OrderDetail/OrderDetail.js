@@ -1,12 +1,11 @@
-import React from 'react'
-import { useNavigation } from '@react-navigation/core';
-import { View, Text, Image, Pressable, StyleSheet } from 'react-native'
-import { COLORS, FONTS, icons, SIZES } from '../../constants'
-import { isIphoneX } from 'react-native-iphone-x-helper';
+import React from 'react';
+import {useNavigation} from '@react-navigation/core';
+import {View, Text, Image, Pressable, StyleSheet} from 'react-native';
+import {COLORS, FONTS, icons, SIZES} from '../../constants';
+import {isIphoneX} from 'react-native-iphone-x-helper';
 
 const OrderDetail = () => {
-
-  const navigation = useNavigation()
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -17,44 +16,37 @@ const OrderDetail = () => {
 
       <View style={styles.orderDetail}>
         <View style={{flexDirection: 'row'}}>
-          <Image 
-            source={icons.pin}
-            resizeMode='contain'
-            style={styles.icon}
-          />
+          <Image source={icons.pin} resizeMode="contain" style={styles.icon} />
           <Text style={{...FONTS.h4}}>Location</Text>
         </View>
 
         <View style={{flexDirection: 'row'}}>
-          <Image 
+          <Image
             source={icons.master_card}
-            resizeMode='contain'
+            resizeMode="contain"
             style={styles.icon}
           />
           <Text style={{...FONTS.h4}}>**** 8888</Text>
         </View>
-
-        
       </View>
       <View style={styles.buttonContainer}>
-        <Pressable style={styles.button} onPress={() => navigation.navigate('OrderDelivery')}>
-          <Text style={{ color: COLORS.white, ...FONTS.h2}}>Order now</Text>
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate('OrderDelivery')}>
+          <Text style={{color: COLORS.white, ...FONTS.h2}}>Order now</Text>
         </Pressable>
       </View>
 
-      {isIphoneX() && (
-        <View style={styles.blankSpace}>
-        </View>
-      )}
+      {isIphoneX() && <View style={styles.blankSpace}></View>}
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.white,
     borderTopLeftRadius: 40,
-    borderTopRightRadius: 40
+    borderTopRightRadius: 40,
   },
   orderDetail: {
     flexDirection: 'row',
@@ -62,25 +54,25 @@ const styles = StyleSheet.create({
     paddingVertical: SIZES.padding * 2,
     paddingHorizontal: SIZES.padding * 3,
     borderBottomColor: COLORS.lightGray2,
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
   },
   buttonContainer: {
     padding: SIZES.padding * 2,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   icon: {
     width: 20,
     height: 20,
     tintColor: COLORS.darkgray,
-    marginRight: SIZES.padding
+    marginRight: SIZES.padding,
   },
   button: {
-    width: SIZES.width * 0.90,
+    width: SIZES.width * 0.9,
     padding: SIZES.padding,
     backgroundColor: COLORS.primary,
     alignItems: 'center',
-    borderRadius: SIZES.radius
+    borderRadius: SIZES.radius,
   },
   blankSpace: {
     position: 'absolute',
@@ -88,9 +80,8 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     height: 34,
-    backgroundColor: COLORS.white
-  }
-})
+    backgroundColor: COLORS.white,
+  },
+});
 
-
-export default OrderDetail
+export default OrderDetail;

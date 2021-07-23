@@ -6,7 +6,7 @@ const Dots = ({items, scrollX}) => {
   return (
     <View style={{height: 30}}>
       <View style={styles.dots}>
-        {items.map((_, index) => <Dot index={index} scrollX={scrollX} />)}
+        {items.map((_, index) => <Dot key={index} index={index} scrollX={scrollX} />)}
       </View>
     </View>
   )
