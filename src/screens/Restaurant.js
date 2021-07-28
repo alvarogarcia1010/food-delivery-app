@@ -31,7 +31,7 @@ const Header = ({restaurantName, onBackButton}) => (
 );
 
 const Restaurant = ({route, navigation}) => {
-  const {restaurant} = useRestaurant(route.params);
+  const { restaurant } = useRestaurant(route.params);
 
   return (
     <SafeAreaView style={globalStyles.container}>
@@ -40,7 +40,7 @@ const Restaurant = ({route, navigation}) => {
         onBackButton={() => navigation.goBack()}
       />
       <FoodInfo menu={restaurant?.menu} />
-      <OrderDetail />
+      <OrderDetail restaurant={restaurant} />
     </SafeAreaView>
   );
 };

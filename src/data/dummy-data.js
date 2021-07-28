@@ -8,8 +8,8 @@ export const EXPENSIVE = 3;
 export const INITIAL_CURRENT_LOCATION = {
   streetName: 'Kuching',
   gps: {
-    latitude: 1.5496614931250685,
-    longitude: 110.36381866919922,
+    latitude: 13.672367094663672,
+    longitude: -89.25889074065775,
   },
 };
 
@@ -76,9 +76,10 @@ export const RESTAURANTS = [
     photo: images.burger_restaurant_1,
     duration: '30 - 45 min',
     location: {
-      latitude: 1.5347282806345879,
-      longitude: 110.35632207358996,
+      latitude: 13.688464871738534,
+      longitude: -89.23019713664709,
     },
+    streetName: 'Circulo Militar',
     courier: {
       avatar: images.avatar_1,
       name: 'Amy',
@@ -119,9 +120,10 @@ export const RESTAURANTS = [
     photo: images.pizza_restaurant,
     duration: '15 - 20 min',
     location: {
-      latitude: 1.556306570595712,
-      longitude: 110.35504616746915,
+      latitude: 13.67769634566676,
+      longitude: -89.30302068594528,
     },
+    streetName: 'Condado Santa Rosa',
     courier: {
       avatar: images.avatar_2,
       name: 'Jackson',
@@ -171,9 +173,10 @@ export const RESTAURANTS = [
     photo: images.hot_dog_restaurant,
     duration: '20 - 25 min',
     location: {
-      latitude: 1.5238753474714375,
-      longitude: 110.34261833833622,
+      latitude: 13.667242350505246,
+      longitude: -89.27088715323784,
     },
+    streetName: 'Plaza Malta',
     courier: {
       avatar: images.avatar_3,
       name: 'James',
@@ -198,9 +201,10 @@ export const RESTAURANTS = [
     photo: images.japanese_restaurant,
     duration: '10 - 15 min',
     location: {
-      latitude: 1.5578068150528928,
-      longitude: 110.35482523764315,
+      latitude: 13.648744302881697,
+      longitude: -89.26477126746141,
     },
+    streetName: 'Parque Nuevo Cuscatlan',
     courier: {
       avatar: images.avatar_4,
       name: 'Ahmad',
@@ -217,6 +221,7 @@ export const RESTAURANTS = [
     ],
   },
   {
+    //13.654264875339441, -89.29035665174261
     id: 5,
     name: 'ByProgrammers Cuisine',
     rating: 4.8,
@@ -225,9 +230,10 @@ export const RESTAURANTS = [
     photo: images.noodle_shop,
     duration: '15 - 20 min',
     location: {
-      latitude: 1.558050496260768,
-      longitude: 110.34743759630511,
+      latitude: 13.654264875339441,
+      longitude: -89.29035665174261,
     },
+    streetName: 'Alturas de Tenerife',
     courier: {
       avatar: images.avatar_4,
       name: 'Muthu',
@@ -276,9 +282,10 @@ export const RESTAURANTS = [
     photo: images.kek_lapis_shop,
     duration: '35 - 40 min',
     location: {
-      latitude: 1.5573478487252896,
-      longitude: 110.35568783282145,
+      latitude: 13.706613342867293,
+      longitude: -89.21037521423332,
     },
+    streetName: 'Metrocentro',
     courier: {
       avatar: images.avatar_1,
       name: 'Jessie',

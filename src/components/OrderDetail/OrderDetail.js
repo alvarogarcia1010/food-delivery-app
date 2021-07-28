@@ -4,7 +4,7 @@ import {View, Text, Image, Pressable, StyleSheet} from 'react-native';
 import {COLORS, FONTS, icons, SIZES} from '../../constants';
 import {isIphoneX} from 'react-native-iphone-x-helper';
 
-const OrderDetail = () => {
+const OrderDetail = ({ restaurant }) => {
   const navigation = useNavigation();
 
   return (
@@ -32,7 +32,7 @@ const OrderDetail = () => {
       <View style={styles.buttonContainer}>
         <Pressable
           style={styles.button}
-          onPress={() => navigation.navigate('OrderDelivery')}>
+          onPress={() => navigation.navigate('OrderDelivery', {restaurant})}>
           <Text style={{color: COLORS.white, ...FONTS.h2}}>Order now</Text>
         </Pressable>
       </View>
